@@ -50,6 +50,7 @@
      <Compile Include="Assets\ChaseResource.cs" />
      <Compile Include="Assets\ClickHit.cs" />
      <Compile Include="Assets\ClickMove.cs" />
+     <Compile Include="Assets\ClickRotate.cs" />
      <Compile Include="Assets\Clicker.cs" />
      <Compile Include="Assets\EntityBehaviour.cs" />
      <Compile Include="Assets\EntityDescriptor.cs" />
