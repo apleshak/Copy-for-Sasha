@@ -21,7 +21,7 @@ public class ClickRotate : MonoBehaviour
 		targetRotation.x = -1;
 		targetRotation.y = 0;
 		targetRotation.z = 0;
-		rotationSpeed = 0.5f;
+		rotationSpeed = 1.0f;
 	}
 	
 	IEnumerator RotateCoroutine ()
@@ -38,20 +38,12 @@ public class ClickRotate : MonoBehaviour
 		
 		rotateCoroutineRunning = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		//transform.Rotate(targetRotation.normalized * rotationSpeed);
-		rotation += rotationSpeed;
-		targetQuaternion = Quaternion.AngleAxis(rotation % 360, targetRotation);
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetQuaternion, Time.deltaTime);
-		if (rotateCoroutineRunning)
-		{
-			StopCoroutine("RotateCoroutine");
-		}
-		
-		StartCoroutine(RotateCoroutine());
+		Vector3 actualRotation = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+		transform.Rotate(targetRotation * rotationSpeed, Space.World);
 		
 		//float newAngle = (targetRotation.w + 0.1f) % 360.0f;
 		//targetRotation.w = newAngle;
@@ -71,7 +63,8 @@ public class ClickRotate : MonoBehaviour
 					Debug.DrawRay(Camera.main.transform.position, trudir, Color.green, 5.0f);
 					Debug.DrawRay(Camera.main.transform.position, orth, Color.blue, 5.0f);
 					targetRotation = orth;
-					
+
+				targetRotation = new Vector3(-trudir.y, trudir.x, trudir.z);
 					//targetRotation.y = clickDir.x;
 					//targetRotation.x = clickDir.y;
 					
