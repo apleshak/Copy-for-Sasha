@@ -50,7 +50,6 @@
      <Compile Include="Assets\ChaseResource.cs" />
      <Compile Include="Assets\ClickHit.cs" />
      <Compile Include="Assets\ClickMove.cs" />
-     <Compile Include="Assets\ClickRotate.cs" />
      <Compile Include="Assets\Clicker.cs" />
      <Compile Include="Assets\EntityBehaviour.cs" />
      <Compile Include="Assets\EntityDescriptor.cs" />
@@ -59,7 +58,9 @@
      <Compile Include="Assets\Memoizer.cs" />
      <Compile Include="Assets\MovementCC.cs" />
      <Compile Include="Assets\MyMonoBehaviour.cs" />
+     <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\ResourceManager.cs" />
+     <Compile Include="Assets\Rotation.cs" />
      <Compile Include="Assets\SelfDestruct.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
